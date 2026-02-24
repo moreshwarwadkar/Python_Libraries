@@ -13,8 +13,26 @@
 - import pandas as pd
 
 ----- ----- Series ----- -----
+
 - pd.Series(collection) -> [set is not allowed in collection]
 - Here 'S' Should be capital in Series Word.
+
+Ex. 
+
+import pandas as pd
+import numpy as np
+
+pd.Series([10,20,30])
+
+Output :
+'''
+	0
+0	10
+1	20
+2	30
+
+dtype: int64
+'''
 
 ----- ----- Filtering ----- -----
 
@@ -32,6 +50,5 @@ Ex. s2[s2>10]
 ----- ----- Way To Create ----- -----
 
 - pd.DataFrame(DICTIONARY)
-
 ['D' and 'F' Should be Uppercase]
 
