@@ -1,4 +1,3 @@
-
 ----- ----- PANDAS ----- -----
 - Pandas is mainly designed for work with Series and DataFrame.
 
@@ -24,8 +23,9 @@ import numpy as np
 
 pd.Series([10,20,30])
 
-Output :
 '''
+Output :
+
 	0
 0	10
 1	20
