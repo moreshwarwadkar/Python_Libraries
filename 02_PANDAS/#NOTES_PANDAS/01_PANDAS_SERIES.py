@@ -109,13 +109,3 @@ dtype: float32
 
 #- var[(condition1) & (condition2)]     [IN CASE OF MULTIPLE CONDITIONS]
 #- var[(condition1) | (condition2)]
-
-#----- ----- DATAFRAME ----- -----
-
-#- Collection of Rows and Columns. or
-#- Collection of Series.
-
-#----- ----- Way To Create ----- -----
-
-#- pd.DataFrame(DICTIONARY)
-#['D' and 'F' Should be Uppercase]
