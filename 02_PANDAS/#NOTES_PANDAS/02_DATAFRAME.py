@@ -345,151 +345,74 @@ df.loc[0:3, ['Gender', 'Salary']]
 '''
 
 
+#===============================
+# 14) df.iloc[row_slice, col_slice]
+# - It is used to select rows and columns by integer position. 
+# - The ending index is excluded.
 
 
 
+#===============================
+# 15) df.loc[row_slice, 'start_column':'end_column']
+# - selects rows and a range of columns by label. 
+# - In loc, both row and column ending values are included.
 
+# EXAMPLE : 
 
+df.loc[:3, 'Department':'Salary']
 
+#OUTPUT :
+'''
+  Department  Gender  Salary
+0         IT    Male   60000
+1         HR  Female   45000
+2         IT    Male   70000
+3    Finance  Female   65000
+'''
 
 
+#===============================
+# 16) df[df['column_name'] == 'value']
+# - is used to filter rows based on a condition.
 
+#EXAMPLE : 
 
+df[df['Gender'] == 'Male']
 
+#OUTPUT :
+'''
+   Emp_ID   Name Department Gender  Salary  Experience   City
+0     101   Amit        IT   Male   60000           3  Mumbai
+2     103   John        IT   Male   70000           5  Mumbai
+4     105  Rahul        HR   Male   40000           1    Pune
+6     107  Arjun   Finance   Male   68000           5   Delhi
+'''
 
 
+#===============================
+# 17)
+'''
+df[
+    (df['column1'] operator value1) &
+    (df['column2'] operator value2) &
+    (df['column3'] operator value3)
+]
+'''
 
+# For multiple conditions in pandas, we use & for AND and | for OR. 
+# Each condition must be enclosed in parentheses inside the DataFrame filtering brackets.
 
+# EXAMPLE : 
 
+df[
+    (df['Gender'] == 'Male') &
+    (df['Experience'] > 3) &
+    (df['City'] == 'Mumbai')
+]
 
+# OUTPUT :
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DATA CLEANING :
-
-- It is a Process of removing unwanted data or handling missing values.
-
-1) Rename Column Name
--> Syntax : df.rename(columns = {'old_col1':'new_col1',
-				'old_col2':'new_col2',
-				'old_coln':'new_coln'},
-				inplace=True)
-
-2) Remove Duplicate Rows :
--> df.drop_duplicates(inplace=True)
-
-3) Apply Any String Function : 
--> df['col'].str.function_Name() : To Split, We can anything in parenthesis, then it will split based on this.
--> df['price'].str.strip('$')
-
-# Use Override Here .. Instead of inplace.
-
-4) Removing Unwanted Columns:
-
--> df.drop(columns = ['col1','col2',...,'coln']) or
--> df.drop(['col1','col2',...,'coln'],axis=1)
-
--> To Remove Row Pass Index Values inside square bracket [].
-
-# Overrride - df = df.drop(['col1','col2',...,'coln'],axis=1)
-
-
-
-5) REOMVING ROWS: 
-
--> df.drop([row_index1,row_index1,...,row_indexn])
-
-
-6) CHANGING THE DATATYPE :;
-
--> df['col1'] = df['col'].astype('datatype')
-
-
-
-
-# HANDLING NULL VALUES :
-
-Handling NULL Values : 
-
-1) Delete the which contains NULL values.
-
--> df.dropna(inplace=True)
--> df.dropna(how = 'all') : Entire Row Should contain null value.
--> df.dropna(how = 'any') : 
--> inplace = True : Any one Value can be null
--> df.dropna(subset=[ 'col1' , 'coln' ])
-
-
-2) Filling NULL Values :
-
--> df.fillna(mean/median/0)
-
-
-
-------------------------------------------------------------------
-
--> Syntax :  df['first'] = df['Full Name'].split(expand=True)[0]
-[ TO SPLIT ]
-
-
-3) Forward Filling :
-
-i)
-Syntax : df['col'] = df['col'].ffil() :  [It Will Fill Upper Values in IN PLACE OF NULL values ] It will not fill first value IF IT IS NULL
-
-
-ii) Backward Filling :
-
-Syntax : df['col'] = df['col'].bfil()  : [ IT WILL FILL LOWER VALUES IN PLACE OF NULL VALUES] IT WILL NOT FILL LAST VALUE IF IT IS NULL
-
-
-
--------------------------------------------------------------------
-
-
-# GROUP BY :
-
-- IT IS USED TO GROUP THE RECORDS.
-
-SYNTAX : df.groupby('COL')
-
-
-
-# ALSO USE AGGREGATE FUNCTIONS : 
-
-- min()
-- max()
-- mean()
-- sum()
-- count()
-
+'''
+   Emp_ID  Name Department Gender  Salary  Experience    City
+2     103  John        IT   Male   70000        5       Mumbai
+'''
