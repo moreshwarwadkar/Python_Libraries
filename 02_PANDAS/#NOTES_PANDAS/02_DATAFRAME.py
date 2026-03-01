@@ -300,21 +300,16 @@ City              Mumbai    Pune  Mumbai   Delhi    Pune  Mumbai   Delhi
 
 #EXAMPLE :
 
-df.loc[0:3, ['Gender', 'Salary']]
+df.loc[5, 'Name']
 
 #OUTPUT :
 '''
-   Gender  Salary
-0    Male   60000
-1  Female   45000
-2    Male   70000
-3  Female   65000
+Neha
 '''
-
 
 #===============================
 # 12) df.iloc[row_start:row_end, column_start:column_end]
-# - is used because a DataFrame is two-dimensional. 
+# - It is used because a DataFrame is two-dimensional. 
 # - The first part selects rows by position, and the second part selects columns by position.
 # - Important: iloc does NOT include the last index.
 
@@ -333,7 +328,21 @@ df.iloc[0:2, 0:3]
 
 
 #===============================
-# 13) 
+# 13) df.loc[row_slice, [col1, col2, ..., coln]]
+# - It is used to select specific rows and specific columns using labels.
+
+#EXAMPLE :
+
+df.loc[0:3, ['Gender', 'Salary']]
+
+#OUTPUT :
+'''
+   Gender  Salary
+0    Male   60000
+1  Female   45000
+2    Male   70000
+3  Female   65000
+'''
 
 
 
