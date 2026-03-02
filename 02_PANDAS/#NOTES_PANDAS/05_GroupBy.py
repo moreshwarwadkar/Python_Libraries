@@ -134,3 +134,9 @@ df.groupby('Department')['Salary'].mean().reset_index()
 2        IT   65000
 '''
 
+
+
+
+# ==============================================================
+# ---> If We want to Performe Same Operation on Multiple Column :
+df.groupby('Category')[['Total_Sales', 'Quantity']].sum()
