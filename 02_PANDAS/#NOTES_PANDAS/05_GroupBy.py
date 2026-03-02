@@ -81,3 +81,56 @@ IT	3
 
 dtype: int64
 '''
+
+
+# ----- ----- Why do we often use reset_index() after groupby?
+
+# - After groupby(), the grouped column becomes the index, not a normal column.
+# - We use reset_index() to convert that index back into a regular column.
+
+
+# (SAMPLE DATA) :
+
+import pandas as pd
+
+data = {
+    "Department": ["IT", "HR", "IT", "Finance"],
+    "Salary": [60000, 45000, 70000, 65000]
+}
+
+df = pd.DataFrame(data)
+
+#OUTPUT :
+'''
+  Department  Salary
+0         IT   60000
+1         HR   45000
+2         IT   70000
+3    Finance   65000
+'''
+
+# ---> Without reset_index() :
+df.groupby('Department')['Salary'].mean()
+
+#OUTPUT :
+# Here, Department is the index.
+'''
+Department
+Finance    65000
+HR         45000
+IT         65000
+Name: Salary, dtype: int64
+'''
+
+# ---> With Using reset_index() :
+df.groupby('Department')['Salary'].mean().reset_index()
+
+#OUTPUT :
+# Now Department is a normal column.
+'''
+  Department  Salary
+0   Finance   65000
+1        HR   45000
+2        IT   65000
+'''
+
