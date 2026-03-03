@@ -1,9 +1,9 @@
 #----- ----- PANDAS ----- -----
-#- Pandas is mainly designed for work with Series and DataFrame.
+# - Pandas is mainly designed for work with Series and DataFrame.
 
 
-#- SERIES : 1D Array
-#- DATAFRAME : 2D Array (Rows and Column[Columns is also called as series])
+# - SERIES : 1D Array
+# - DATAFRAME : 2D Array (Rows and Column[Columns is also called as series])
 
 
 #----- ----- Installation Of Pandas ----- -----
@@ -13,8 +13,9 @@
 
 #----- ----- Series ----- -----
 
-#- pd.Series(collection) -> [set is not allowed in collection]
-#- Here 'S' Should be capital in Series Word.
+# A Series is a one-dimensional labeled array in pandas.
+# - pd.Series(collection) -> [set is not allowed in collection]
+# - Here 'S' Should be capital in Series Word.
 
 
 #ExAMPLE 1: (BASIC PROGRAM)
