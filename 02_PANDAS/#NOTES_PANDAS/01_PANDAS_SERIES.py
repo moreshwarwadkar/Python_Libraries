@@ -109,3 +109,34 @@ dtype: float32
 
 #- var[(condition1) & (condition2)]     [IN CASE OF MULTIPLE CONDITIONS]
 #- var[(condition1) | (condition2)]
+
+
+# EXAMPLE : 
+
+s = pd.Series([1,2,3,4,5])
+s[s>3]
+
+# OUTPUT :
+'''
+	0
+3	4
+4	5
+
+dtype: int64
+'''
+
+
+# EXAMPLE :
+
+s1 = pd.Series([10,20,30,40,50])
+s1[(s1>20) & (s1<50)]
+
+# OUTPUT :
+'''
+
+0
+2	30
+3	40
+
+dtype: int64
+'''
