@@ -35,5 +35,21 @@ df.pivot_table(values='Sales', index='City', aggfunc='sum')
 
 # OUTPUT :
 '''
-
+City	Sales
+Delhi	6500
+Mumbai	7000
+Pune	4500
 '''
+
+# EXAMPLE : SALES PER COTY AND CATEGORY
+df.pivot_table(values='Sales', index='City', columns='Category', aggfunc='sum')
+
+# OUTPUT : 
+'''
+City	Clothing	Electronics
+Delhi	  2500	       4000
+Mumbai	  2000	       5000
+Pune	  1500	       3000
+'''
+
+
