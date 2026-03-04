@@ -41,7 +41,7 @@ Mumbai	7000
 Pune	4500
 '''
 
-# EXAMPLE : SALES PER COTY AND CATEGORY
+# EXAMPLE 2 : SALES PER COTY AND CATEGORY
 df.pivot_table(values='Sales', index='City', columns='Category', aggfunc='sum')
 
 # OUTPUT : 
