@@ -13,7 +13,7 @@
 
 #----- ----- Series ----- -----
 
-# A Series is a one-dimensional labeled array in pandas.
+# - A Series is a one-dimensional labeled array in pandas.
 # - pd.Series(collection) -> [set is not allowed in collection]
 # - Here 'S' Should be capital in Series Word.
 
@@ -54,7 +54,7 @@ dtype: int64
 # ExAMPLE 3 : (index)
 # By default, pandas gives automatic integer index.
 # Similar to Above Example [Indexes are : 0 1 2].
-# We are customizing the row labels by using 'index'.
+# We can customize the row labels by using 'index'.
 pd.Series([10,20,30],name='Numbers',index=['a','b','c'])
 
 #OUTPUT :
@@ -119,7 +119,7 @@ s[s>3]
 
 # OUTPUT :
 '''
-	0
+0
 3	4
 4	5
 
